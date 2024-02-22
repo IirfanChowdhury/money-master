@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Money Master</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://kit.fontawesome.com/7c0a7ad468.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <section class="contianer mt-5">
+            <h1 class="text-center fw-bold text-warning">DayMoney</h1>
+        </section>
+    </header>
+    <main>
+        <section class="container mt-5">
+            <div>
+                <div class="row g-3 d-flex align-items-center">
+                    <div class="col-lg-6 col-12">
+                        <div>
+                            <img class="img-fluid rounded-3"
+                                src="images/tinywow_person-carrying-lot-cash_48266237 (1) (1).jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <div>
+                            <div class="d-flex align-items-center       justify-content-center mb-3 ms-3">
+                                <div class="col-lg-4">
+                                </div>
+                                <div class="col-lg-6 text-center">
+                                    <h4>Income</h4>
+                                </div>
+                                <div class="col-lg-2">
+
+                                </div>
+
+                            </div>
+                            <div class="row ">
+                                <div class="d-flex align-items-center justify-content-center  label-btn">
+                                    <div class="col-lg-4">
+                                        <h6 class="text-end">Income :</h6>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="d-flex align-items-center">
+                                            <input id="income-input" type="number" class="form-control  w-75 ms-3 py-2"
+                                            style="background-color: lightgray;" aria-label="Username"
+                                            aria-describedby="addon-wrapping">
+                                            <i id="error-msg-income" class="fa-solid fa-circle-exclamation"></i>
+                                        </div>
+                                            
+                                    </div>
+                                    
+                                </div>
+
+                            </div>
+                        </div>
+                        <div>
+                            <div class="row ">
+                                <div class="d-flex align-items-center       justify-content-center mt-4 mb-3 
+                                ">
+                                    <div class="col-lg-4">
+                                    </div>
+                                    <div class="col-lg-6 text-center">
+                                        <h4>Expenses</h4>
+                                    </div>
+                                    <div class="col-lg-2">
+
+                                    </div>
+
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center mb-3">
+                                    <div class="col-lg-4">
+                                        <h6 class="text-end">Food :</h6>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="d-flex align-items-center">
+                                            <input id="food-input" type="number" class="form-control  w-75 ms-3 py-2"
+                                            style="background-color: lightgray;" aria-label="Username"
+                                            aria-describedby="addon-wrapping">
+                                            <i id="error-msg-food" class="fa-solid fa-circle-exclamation"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center mb-3">
+                                    <div class="col-lg-4">
+                                        <h6 class="text-end">Rent :</h6>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="d-flex align-items-center">
+                                            <input id="rent-input" type="number" class="form-control  w-75 ms-3 py-2"
+                                            style="background-color: lightgray;" aria-label="Username"
+                                            aria-describedby="addon-wrapping">
+                                            <i id="error-msg-rent" class="fa-solid fa-circle-exclamation"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center mb-3 label-input">
+                                    <div class="col-lg-4">
+                                        <h6 class="text-end">Clothes :</h6>
+                                    </div>
+                                    <div class="col-lg-8 ">
+                                        <div class="d-flex align-items-center">
+                                            <input id="cloth-input" type="number" class="form-control  w-75 ms-3 py-2"
+                                            style="background-color: lightgray;" aria-label="Username"
+                                            aria-describedby="addon-wrapping">
+                                            <i id="error-msg-cloth" class="fa-solid fa-circle-exclamation"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center       justify-content-center mt-3 mb-3 ">
+                                    <div class="col-lg-4">
+                                    </div>
+                                    <div class="col-lg-6 text-center">
+                                        <button id="btn-calc" class="btn btn-info text-light fw-semibold px-5 py-2 label-btn ms-4"
+                                            type="submit">Calculate</button>
+                                    </div>
+                                    <div class="col-lg-2">
+
+                                    </div>
+
+                                </div>
+                                <div class="d-flex align-items-center       justify-content-center mb-3 mt-3 ">
+                                    <div class="col-lg-4">
+                                    </div>
+                                    <div class="col-lg-6 text-center">
+                                        <h4>Total Expenses : <span id="expense-amount">$0</span> </h5>
+                                    </div>
+                                    <div class="col-lg-2">
+
+                                    </div>
+
+                                </div>
+                                <div class="d-flex align-items-center               justify-content-center mb-3 ">
+                                    <div class="col-lg-4">
+                                    </div>
+                                    <div class="col-lg-6 text-center">
+                                        <h4>Current Balance : <span id="total-balance-input">$0</span> </h5>
+                                    </div>
+                                    
+                                    <div class="col-lg-2">
+
+                                    </div>
+
+                                </div>
+                                <p id="error-msg-balance" class="text-center ms-5">You don't Have Enough Money</p>
+
+                                <div class="d-flex align-items-center               justify-content-center mb-3 ">
+                                    <div class="col-lg-2">
+                                        <h6 class="text-end">Save :</h6>
+                                    </div>
+                                    <div class="col-lg-2 input-save ">
+                                        <div class="d-flex align-items-center">
+                                            <input id="save-input" type="number" class="form-control  w-75 ms-3 py-2"
+                                            style="background-color: lightgray;" aria-label="Username"
+                                            aria-describedby="addon-wrapping">
+                                            <i id="error-msg-save" class="fa-solid fa-circle-exclamation"></i>
+                                        </div>    
+                                            
+                                    </div>
+                                    <div class="col-lg-1 text-center ms-1">
+                                        <h5>%</h5>
+                                    </div>
+                                    <div class="col-lg-3 saving-button">
+                                        <button id="save-btn"
+                                            class="btn fw-semibold btn-info text-light py-2 px-5 rounded-1 saving-btn">Save</button>
+                                    </div>
+                                    <!-- <div class="col-lg-2 bg-info">
+                                        <h5>duis</h5>
+                                    </div> -->
+
+                                </div>
+                                <p class="text-center ms-5" id="error-msg-save-text"> Please Provide a Valid Number</p>
+                                <p class="text-center ms-5" id="error-msg-save-text-modify"> Please Input Your Income and Expenses</p>
+                                <div class="d-flex align-items-center               justify-content-center mb-3  mt-3">
+                                    <div class="col-lg-4">
+                                    </div>
+                                    <div class="col-lg-6 text-center">
+                                        <h4>Saving Amount : <span id="saving-amount">$0</span> </h5>
+                                    </div>
+                                    <div class="col-lg-2">
+
+                                    </div>
+
+                                </div>
+                                <div class="d-flex align-items-center               justify-content-center mb-3 ">
+                                    <div class="col-lg-4">
+                                    </div>
+                                    <div class="col-lg-6 text-center">
+                                        <h5>Remaining Balance : <span id="remaining-balance">$0</span> </h5>
+                                    </div>
+                                    <div class="col-lg-2">
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+
+
+
+
+
+
+    <script src="js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

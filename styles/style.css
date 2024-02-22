@@ -1,0 +1,90 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+.form-control:focus {
+    border-color: rgb(201, 201, 33);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 5px rgba(124, 112, 6, 0.6);
+}
+#error-msg-income {
+    display: none;
+    position: relative;
+    right: 28px;
+    color: red;
+}
+#error-msg-food {
+    display: none;
+    position: relative;
+    right: 28px;
+    color: red;
+}
+#error-msg-rent {
+    display: none;
+    position: relative;
+    right: 28px;
+    color: red;
+}
+#error-msg-cloth {
+    display: none;
+    position: relative;
+    right: 28px;
+    color: red;
+}
+#error-msg-balance {
+    display: none;
+   color: red;
+}
+#error-msg-save {
+    font-size: smaller;
+    display: none;
+    position: relative;
+    right: 20px;
+    color: red;
+}
+#error-msg-save-text {
+    display: none;
+    color: red;
+}
+#error-msg-save-text-modify {
+    display: none;
+    color: red;
+}
+
+@media screen and (max-width: 993px ) {
+    .label-input{
+        position: relative;
+        right: 10px;
+    }
+    .label-btn {
+        position: relative;
+        right: 8px;
+    }
+    .input-save {
+        width: 25%;
+        padding-right: 10px;
+    }
+    .saving-btn {
+        margin-left: 10px;
+       padding-left: 20px !important;
+       padding-right: 20px !important;
+    }
+    #btn-calc {
+        position: relative;
+        left: 0px;
+    }
+    
+}
+/* label{
+    display: inline-block;
+        width: 150px;
+        text-align: right;
+} */
+
+/* .input-padding {
+    padding-right: 40px;
+} */
