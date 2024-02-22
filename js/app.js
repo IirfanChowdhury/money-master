@@ -58,7 +58,7 @@ function getTotalExpenses (totalExpenseValue){
         document.getElementById('income-input').style.boxShadow = '0 0 5px #ff0000'
     }
     if (isNaN(totalExpenseValue)) {
-        console.log('dass')        
+        console.log('')        
     }
     else if (totalExpenseValue > parseFloat(incomeInputValueText) || incomeInputValueText == undefined) {
         document.getElementById('error-msg-balance').style.display = 'block'
@@ -123,7 +123,6 @@ function getSaveAmount() {
     else if (isNaN(saveAmount)){
         document.getElementById('error-msg-save-text-modify').style.display = 'block'
         document.getElementById('error-msg-save-text').style.display = 'none'
-        console.log('hoga mara');
     }
     else {
         document.getElementById('error-msg-save').style.display = 'none'
@@ -135,6 +134,28 @@ function getSaveAmount() {
     }
     
 }
+function inputFieldReset(fieldId, errorMsg){
+    document.getElementById(fieldId).addEventListener('focus', function(){
+            document.getElementById(errorMsg).style.display = 'none'
+            document.getElementById(fieldId).style.borderColor = ''
+            document.getElementById(fieldId).style.boxShadow = 'none'
+    })
+}
+function inputField(fieldId, errorMsg){
+    document.getElementById(fieldId).addEventListener('blur', function(){
+        const incomeInputText = document.getElementById(fieldId)
+        const incomeInputValue = incomeInputText.value
+        const getIncomeValue = incomeInputValue
+        if (getIncomeValue == '') {
+            document.getElementById(errorMsg).style.display = 'block'
+            document.getElementById(fieldId).style.borderColor = 'red'
+            document.getElementById(fieldId).style.boxShadow = '0 0 5px #ff0000'
+        }
+    })
+}
+
+
+
 document.getElementById('btn-calc').addEventListener('click', function(){
     const incomeInputValueText = getInputValue('income-input', 'error-msg-income')
     const foodInputValueText = getInputValue('food-input','error-msg-food')
@@ -152,3 +173,18 @@ document.getElementById('btn-calc').addEventListener('click', function(){
 document.getElementById('save-btn').addEventListener('click', function(){
     getSaveAmount()
 })
+
+inputFieldReset('income-input', 'error-msg-income')
+inputFieldReset('food-input','error-msg-food')
+inputFieldReset('rent-input','error-msg-rent')
+inputFieldReset('cloth-input','error-msg-cloth')
+inputFieldReset('save-input','error-msg-save')
+
+inputField('income-input', 'error-msg-income')
+inputField('food-input','error-msg-food')
+inputField('rent-input','error-msg-rent')
+inputField('cloth-input','error-msg-cloth')
+inputField('save-input','error-msg-save')
+// document.getElementsByTagName('body').addEventListener('click', function(){
+//     console.log('bosy clicked');
+// })
