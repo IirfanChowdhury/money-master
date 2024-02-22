@@ -1,3 +1,5 @@
+// get input value 
+
 function getInputValue(inputId, errorMsg){
     const incomeInputText = document.getElementById(inputId)
     const incomeInputValue = incomeInputText.value
@@ -11,6 +13,17 @@ function getInputValue(inputId, errorMsg){
         document.getElementById(errorMsg).style.display = 'block'
         document.getElementById(inputId).style.borderColor = 'red'
         document.getElementById(inputId).style.boxShadow = '0 0 5px #ff0000'
+        inputField('income-input', 'error-msg-income')
+        inputField('food-input','error-msg-food')
+        inputField('rent-input','error-msg-rent')
+        inputField('cloth-input','error-msg-cloth')
+        inputField('save-input','error-msg-save')
+
+        inputFieldReset('income-input', 'error-msg-income')
+        inputFieldReset('food-input','error-msg-food')
+        inputFieldReset('rent-input','error-msg-rent')
+        inputFieldReset('cloth-input','error-msg-cloth')
+        inputFieldReset('save-input','error-msg-save')
     } 
     else {
         document.getElementById(errorMsg).style.display = 'none'
@@ -21,6 +34,8 @@ function getInputValue(inputId, errorMsg){
     incomeInputText.value = '';
     
 }
+
+// calculate total cost
 function calcTotalCostValue(){
     const foodInputValueText = getInputValue('food-input','error-msg-food')
     const rentInputValueText = getInputValue('rent-input','error-msg-rent')
@@ -46,9 +61,9 @@ function calcTotalCostValue(){
     }
     return calcTotalCost
     
-    // const calcTotalCostValue = food + rent + cloth
-    // return calcTotalCost;
 }
+// 
+// calculate total expenses 
 function getTotalExpenses (totalExpenseValue){
     const incomeInputText = document.getElementById('income-input')
     const incomeInputValueText = getInputValue('income-input', 'error-msg-income')
@@ -81,6 +96,8 @@ function getTotalExpenses (totalExpenseValue){
         expenseAmountText.innerText = totalExpenseValue
     }
 }
+
+// calculate remaining amount after total expenses
 function getTotalAmount(totalExpenseValue) {
     const incomeInputValueText = getInputValue('income-input', 'error-msg-income')
     const remainingAmount = parseFloat(incomeInputValueText) - totalExpenseValue
@@ -102,6 +119,7 @@ function getTotalAmount(totalExpenseValue) {
     return remainingAmount;
 
 }
+// calculate remaining amount after savings
 function getSaveAmount() {
     const totalExpenseValue = calcTotalCostValue()
     const saveInputText = document.getElementById('save-input')
@@ -134,15 +152,16 @@ function getSaveAmount() {
     }
     
 }
+// reset inputfield 
 function inputFieldReset(fieldId, errorMsg){
-    document.getElementById(fieldId).addEventListener('focus', function(){
+    document.getElementById(fieldId).addEventListener('blur', function(){
             document.getElementById(errorMsg).style.display = 'none'
             document.getElementById(fieldId).style.borderColor = ''
             document.getElementById(fieldId).style.boxShadow = 'none'
     })
 }
 function inputField(fieldId, errorMsg){
-    document.getElementById(fieldId).addEventListener('blur', function(){
+    document.getElementById(fieldId).addEventListener('focus', function(){
         const incomeInputText = document.getElementById(fieldId)
         const incomeInputValue = incomeInputText.value
         const getIncomeValue = incomeInputValue
@@ -166,25 +185,20 @@ document.getElementById('btn-calc').addEventListener('click', function(){
     getTotalExpenses(totalExpenseValue)
     getTotalAmount(totalExpenseValue)
 
-    // const calcTotalValue = parseFloat(incomeInputValue) - calcTotalCostValue ;
-    // console.log(calcTotalValue);
 
 })
 document.getElementById('save-btn').addEventListener('click', function(){
     getSaveAmount()
 })
-
-inputFieldReset('income-input', 'error-msg-income')
-inputFieldReset('food-input','error-msg-food')
-inputFieldReset('rent-input','error-msg-rent')
-inputFieldReset('cloth-input','error-msg-cloth')
-inputFieldReset('save-input','error-msg-save')
-
-inputField('income-input', 'error-msg-income')
-inputField('food-input','error-msg-food')
-inputField('rent-input','error-msg-rent')
-inputField('cloth-input','error-msg-cloth')
-inputField('save-input','error-msg-save')
-// document.getElementsByTagName('body').addEventListener('click', function(){
-//     console.log('bosy clicked');
-// })
+// focus input 
+// inputFieldReset('income-input', 'error-msg-income')
+// inputFieldReset('food-input','error-msg-food')
+// inputFieldReset('rent-input','error-msg-rent')
+// inputFieldReset('cloth-input','error-msg-cloth')
+// inputFieldReset('save-input','error-msg-save')
+// blur input 
+// inputField('income-input', 'error-msg-income')
+// inputField('food-input','error-msg-food')
+// inputField('rent-input','error-msg-rent')
+// inputField('cloth-input','error-msg-cloth')
+// inputField('save-input','error-msg-save')
